@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(#ffe0ec, #d8e8ff);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    color: #ff4081;
+    text-align: center;
+    text-shadow: 2px 2px white;
+    animation: bounce 1s infinite alternate;
+}
+
+p {
+    color: #784b83;
+    font-size: 18px;
+}
+
+.cake {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    margin-top: 60px;
+}
+
+.plate {
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 260px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 5px 10px #aaa;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+    width: 220px;
+    border-radius: 12px 12px 8px 8px;
+}
+
+.bottom {
+    bottom: 15px;
+    height: 65px;
+    background: #ff8fab;
+    border-bottom: 8px solid #ff5c8a;
+}
+
+.middle {
+    bottom: 80px;
+    height: 45px;
+    background: #ffd166;
+    border-bottom: 6px solid #ffb703;
+}
+
+.icing {
+    position: absolute;
+    bottom: 105px;
+    width: 220px;
+    height: 25px;
+    background: #fff0f5;
+    border-radius: 50% 50% 10px 10px;
+    z-index: 2;
+}
+
+.drip {
+    position: absolute;
+    top: 15px;
+    width: 18px;
+    height: 22px;
+    background: #fff0f5;
+    border-radius: 0 0 10px 10px;
+}
+
+.drip:nth-child(1) { left: 30px; }
+.drip:nth-child(2) { left: 90px; height: 30px; }
+.drip:nth-child(3) { left: 160px; }
+
+.candle {
+    position: absolute;
+    bottom: 125px;
+    left: 101px;
+    width: 18px;
+    height: 48px;
+    background: repeating-linear-gradient(
+        45deg, #80deea, #80deea 5px,
+        white 5px, white 10px
+    );
+    border-radius: 4px;
+    z-index: 3;
+}
+
+.flame {
+    position: absolute;
+    top: -25px;
+    left: 2px;
+    width: 14px;
+    height: 23px;
+    background: #ff9800;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    animation: flicker 0.3s infinite alternate;
+    box-shadow: 0 0 15px #ffcc00;
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.heart1 { top: 30%; left: 15%; }
+.heart2 { top: 40%; right: 15%; animation-delay: 1s; }
+.heart3 { top: 65%; left: 20%; animation-delay: 2s; }
+
+@keyframes flicker {
+    from { transform: rotate(-45deg) scale(1); }
+    to { transform: rotate(-40deg) scale(1.15); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
